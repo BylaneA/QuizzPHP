@@ -1,0 +1,40 @@
+body{
+  font-family: arial;
+  font-size: 15px;
+  line-height: 1.6em;
+}
+
+li{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+header{
+  border-bottom: 3px lightgrey solid;
+}
+
+.container{
+  width: 60%;
+  margin: 0 auto;
+  overflow: auto;
+}
+
+main{
+  padding-bottom: 20px;
+}
+a.start{
+  display: inline-block;
+  color: #666;
+  background: lightgrey;
+  border: 1px dotted #ccc;
+  padding: 6px 12px;
+}
+
+footer{
+  border-top: 3px lightgrey solid;
+  text-align: center;
+  padding-top: 5px;
+}
