@@ -17,14 +17,9 @@
 
       <main>
         <div class="container">
-          <h2>Testons un peu ce que vous valez en PHP</h2>
-          <p>Quizz a multiple choix</p>
-          <ul>
-            <li>Nombre de question: 5</li>
-            <li>Type: Choix multiple</li>
-            <li>Temps: 5 minutes</li>
-          </ul>
-          <a href="question.php?n=1" class="start">Commencer</a>
+              <h2>Vous avez termine!</h2>
+              <p>Le resultat du quizz: 5</p>
+              <a href="question.php?n=1" class="start"></a>
         </div>
       </main>
 
