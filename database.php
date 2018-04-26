@@ -1,13 +1,15 @@
 <?php
-$db_host = 'localhost';
-$db_name = 'quizz_db';
-$db_user = 'root';
-$db_pass = 'facesimplon';
+$user = 'root';
+$pass = 'facesimplon';
 
-$mysqli = new mysqli($db_host, $db_user, $db_pass, $db_name);
-
-//Si erreur
-if($mysqli->connect_error){
-  printf("Connect failed: %s\n", $mysqli->connect_error);
-  exit();
+//connexion et si erreur
+try {
+    $dbh = new PDO('mysql:host=localhost;dbname=quizz_db', $user, $pass);
+    foreach($dbh->query('SELECT * from FOO') as $row) {
+        print_r($row);
+    }
+    $dbh = null;
+} catch (PDOException $e) {
+    print "Error!: " . $e->getMessage() . "<br/>";
+    die();
 }
