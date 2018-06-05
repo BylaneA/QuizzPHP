@@ -13,6 +13,14 @@
   //associate array with the data requested
   $question = $res->fetch_assoc();
 
+
+  // on récupére les choix
+  $query = "SELECT * FROM `choices`
+            WHERE question_number = $number";
+
+  $result = $mysqli->query($query) or die ($mysqli->error._LINE_);
+
+
  ?>
 <!DOCTYPE html>
 <html>
@@ -38,10 +46,9 @@
               </p>
               <form class="" action="process.php" method="post">
                 <ul class="choices">
-                  <li><input type="radio" name="choice" value="1"/> PHP: Hypertext Preprocessor</li>
-                  <li><input type="radio" name="choice" value="1"/> PHP: Pre Hypertext Processor</li>
-                  <li><input type="radio" name="choice" value="1"/> PHP: Private Home Page</li>
-                  <li><input type="radio" name="choice" value="1"/> PHP: Personal Home Page</li>
+                  <?php while($row = $result->fetch_assoc()) : ?>
+                      <li><input type="radio" name="choice" value="><?php echo $row['id']; ?>"/><?php echo $row['text']; ?></li>
+                  <?php endwhile; ?>
                 </ul>
                 <input type="submit" name="" value="Submit">
               </form>
