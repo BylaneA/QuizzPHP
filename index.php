@@ -1,4 +1,12 @@
 <?php include 'database.php'; ?>
+<?php
+  //on récupére le nombre total de questions
+  $query = "SELECT * FROM `questions`";
+
+  $res = $mysqli->query($query) or die ($mysqli->error._LINE_);
+  //on récupére le total des questions
+  $total = $res->num_rows;
+ ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -21,7 +29,7 @@
           <h2>Testons un peu ce que vous valez en PHP</h2>
           <p>Quizz a multiple choix</p>
           <ul>
-            <li>Nombre de question: 5</li>
+            <li>Nombre de question: <?php echo $total ; ?></li>
             <li>Type: Choix multiple</li>
             <li>Temps: 5 minutes</li>
           </ul>
