@@ -31,7 +31,7 @@
           <ul>
             <li>Nombre de question: <?php echo $total ; ?></li>
             <li>Type: Choix multiple</li>
-            <li>Temps: 5 minutes</li>
+            <li>Temps: <?php echo $total * .5 ; ?> minutes</li>
           </ul>
           <a href="question.php?n=1" class="start">Commencer</a>
         </div>
