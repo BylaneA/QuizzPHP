@@ -1,4 +1,5 @@
 <?php include 'database.php'; ?>
+<?php session_start(); ?>
 
 <?php
 
@@ -20,8 +21,14 @@
 
   $result = $mysqli->query($query) or die ($mysqli->error._LINE_);
 
+  //on récupére le nombre total de questions
+  $query = "SELECT * FROM `questions`";
+
+  $reslt = $mysqli->query($query) or die($mysqli->error._LINE_);
+  $total = $reslt->num_rows;
 
  ?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -40,7 +47,7 @@
 
       <main>
         <div class="container">
-              <div class="current">Question 1 sur 5</div>
+              <div class="current">Question <?php echo $question['question_number']; ?> sur <?php echo $total; ?></div>
               <p class="question">
                   <?php echo $question['text']; ?>
               </p>
@@ -50,7 +57,8 @@
                       <li><input type="radio" name="choice" value="><?php echo $row['id']; ?>"/><?php echo $row['text']; ?></li>
                   <?php endwhile; ?>
                 </ul>
-                <input type="submit" name="" value="Submit">
+                <input type="submit" name="" value="Submit" />
+                <input type="hidden" name="number" value="<?php echo $number;  ?>" />
               </form>
             </div>
       </main>

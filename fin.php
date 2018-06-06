@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -18,8 +19,8 @@
       <main>
         <div class="container">
               <h2>Vous avez termine!</h2>
-              <p>Le resultat du quizz: 5</p>
-              <a href="question.php?n=1" class="start"></a>
+              <p>Le resultat du quizz: <?php echo $_SESSION['score']; ?></p>
+              <a href="question.php?n=1" class="start">Recommencez</a>
         </div>
       </main>
 
