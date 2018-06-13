@@ -65,7 +65,7 @@
 
       <footer>
         <div class="container">
-          Done by Bilane
+          
         </div>
       </footer>
 
